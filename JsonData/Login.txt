@@ -1,0 +1,7 @@
+{
+  "LoginDetails" : {
+  "UserName" : "Connor",
+  "PasswordHash" : "PHash",
+  "EmailAddress" : "abc@def.xyz"
+  }
+}

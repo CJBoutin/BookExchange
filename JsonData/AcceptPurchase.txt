@@ -1,0 +1,6 @@
+{
+  "AcceptBid": {
+    "SellerId" : 1,
+    "BidId" : 1
+   }
+}

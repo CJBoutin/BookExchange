@@ -1,0 +1,16 @@
+{
+  "NewListingDetails" : {
+  "UserId" : 1,
+    "ItemInfo" : {
+    "Name" : "John's Tears",
+    "ISBN" : "123456789",
+    "Image" : "qwertyuio",
+    "Author" : "John",
+    "Publisher" : "John's Mom",
+    "Edition" : "Forty-Second",
+    "ListPrice" : 50,
+    "Negotiable" : false,
+    "Condition" : "new"
+    }
+  }
+}

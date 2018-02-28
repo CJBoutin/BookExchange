@@ -1,0 +1,11 @@
+{
+  "RetrieveListings" : {
+      "Query" : {
+      "ItemName" : "John",
+      "ISBN" : "234",
+      "Author" : "Mark",
+      "Publisher" : "John",
+      "Edition" : "One"
+      }
+  }
+}

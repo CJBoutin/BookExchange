@@ -1,0 +1,7 @@
+{
+  "MakeBid": {
+    "PurchaserId" : 1,
+    "TransactionId" : 1,
+    "ProposedPrice" : 50
+  }
+}

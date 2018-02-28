@@ -1,0 +1,5 @@
+{
+  "GetUserProfile" : {
+      "UserId" : 1
+  }
+}
