@@ -1,3 +1,5 @@
+// Client sends this to API when seller makes a new listing
+
 {
   "NewListingDetails" : {
   "UserId" : 1,
