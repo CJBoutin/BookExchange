@@ -1,3 +1,5 @@
+// The client sends this to the API when current user wants to buy an item.
+
 {
   "MakeBid": {
     "PurchaserId" : 1,
