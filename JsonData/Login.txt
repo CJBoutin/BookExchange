@@ -1,9 +1,7 @@
 // The client sends this to the API when logging in
 
 {
-  "LoginDetails" : {
     "UserName" : "Connor",
     "PasswordHash" : "PHash",
     "EmailAddress" : "abc@def.xyz"
-  }
 }
