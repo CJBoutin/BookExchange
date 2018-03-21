@@ -3,5 +3,6 @@
 {
     "UserName" : "Connor",
     "PasswordHash" : "PHash",
+    "PhoneNumber" : "9542782404",
     "EmailAddress" : "abc@def.xyz"
 }
