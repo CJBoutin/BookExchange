@@ -1,0 +1,6 @@
+// What the client sends to the API when logging in
+
+{
+    "UserName" : "Connor",
+    "PasswordHash" : "PHash"
+}
