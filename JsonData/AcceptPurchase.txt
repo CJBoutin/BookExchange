@@ -1,8 +1,8 @@
 // Client sends this to API when a seller accepts a proposed bid
 
 {
-  "AcceptBid": {
+
     "SellerId" : 1,
     "BidId" : 1
-   }
+
 }
