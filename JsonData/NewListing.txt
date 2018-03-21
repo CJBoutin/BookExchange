@@ -1,7 +1,6 @@
 // Client sends this to API when seller makes a new listing
 
 {
-  "NewListingDetails" : {
   "UserId" : 1,
       "Name" : "John's Tears",
       "ISBN" : "123456789",
@@ -12,5 +11,4 @@
       "ListPrice" : 50,
       "Negotiable" : false,
       "Condition" : "new"
-  }
 }
