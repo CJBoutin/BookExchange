@@ -10,5 +10,6 @@
       "Edition" : "Forty-Second",
       "ListPrice" : 50,
       "Negotiable" : false,
+      "Description" : "This is a description",
       "Condition" : "new"
 }
