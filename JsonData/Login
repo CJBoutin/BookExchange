@@ -1,4 +1,5 @@
 // What the client sends to the API when logging in
+boutinvm.eastus.cloudapp.azure.com/Distribute.svc/Authenticate
 
 {
     "UserName" : "Connor",
