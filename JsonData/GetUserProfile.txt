@@ -1,2 +1,2 @@
-// Get profile based on user Id /Distribute.svc/GetProfile?Uid={X}
+// Get profile based on user Id boutinvm.eastus.cloudapp.azure.com//Distribute.svc/GetProfile?Uid={X}
 
