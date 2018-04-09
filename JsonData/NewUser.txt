@@ -1,5 +1,7 @@
 // The client sends this to the API when making a new user
 
+boutinvm.eastus.cloudapp.azure.com/Distribute.svc/NewUser
+
 {
     "UserName" : "Connor",
     "PasswordHash" : "PHash",
