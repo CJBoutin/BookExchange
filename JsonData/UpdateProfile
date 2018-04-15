@@ -3,12 +3,11 @@
 boutinvm.eastus.cloudapp.azure.com/Distribute.svc/UpdateProfile
 {
 
-    "UserName" : "Connor",
-
+    "UIdToChange" : "1",
+    "FirstName" : "Connor",
+    "LastName" : "Boutin",
     "PasswordHash" : "PHash",
-
     "PhoneNumber" : "9542782404",
-     
     "EmailAddress" : "abc@def.xyz"
 
 }
