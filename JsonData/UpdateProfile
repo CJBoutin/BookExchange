@@ -1,0 +1,14 @@
+// The client sends this to the API when updating a profile
+
+boutinvm.eastus.cloudapp.azure.com/Distribute.svc/UpdateProfile
+{
+
+    "UserName" : "Connor",
+
+    "PasswordHash" : "PHash",
+
+    "PhoneNumber" : "9542782404",
+     
+    "EmailAddress" : "abc@def.xyz"
+
+}
