@@ -1,3 +1,0 @@
-// Get item details
-
-/Distribute.svc/GetItemDetails?ItemId={x}

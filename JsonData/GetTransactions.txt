@@ -1,0 +1,3 @@
+// Get transaction details
+
+boutinvm.eastus.cloudapp.azure.com/Distribute.svc/TransactionDetails?TranId=5
