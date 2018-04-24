@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookExchange</title>
+
+    <link href="format.css" rel="stylesheet" />
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- BookExchange JS -->
+    <script src="BookExchange.js"></script>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "#bbbbbb");
+            });
+            $("input").blur(function()
+            {
+                $(this).css("background-color", "#ffffff");
+            });
+            $("#addBook").click(function()
+            {
+                
+            });
+            //this is where we will populate the listings for the first time
+            getListings();
+        });
+    </script>
+    
+    
+   
+</head>
+
+    
+<body>
+    
+<!--- Nav Bar --->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid" style="padding-right: 15px; padding-left: 15px">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">BookExchange</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li class="active"><a href="sell.html">Sell</a></li>
+            </ul>
+            
+            <form class="navbar-form navbar-left" id="navbarSearch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" id="navbarSearchText">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+                </ul>
+        </div>    
+    </nav>  
+    
+    <div class="container-fluid">
+        
+<!--- Banner --->
+        <h3 style="padding-top: 20px">Your current books for sale:</h3>   
+        <br>
+        
+<!--- Current Sales Table --->
+            <table class="table table-hover" id="sellTable">
+                <caption style="text-align: center">Your Books for Sale</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Edition</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>ISBN</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>1</td>
+                        <td>Doe</td>
+                        <td>$99</td>
+                        <td>1156498755</td>
+                        <td><button type="submit" class="btn btn-default btn-sm" style="color:darkred; border: none; background: none"><span class="glyphicon glyphicon-remove"></span>
+						</button></td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>3</td>
+                        <td>Moe</td>
+                        <td>$50</td>
+                        <td>9986874592</td>
+                        <td><button type="submit" class="btn btn-default btn-sm" style="color:darkred; border: none; background: none"><span class="glyphicon glyphicon-remove"></span>
+						</button></td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>2</td>
+                        <td>Dooley</td>
+                        <td>$40</td>
+                        <td>5546879813</td>
+                        <td><button type="submit" class="btn btn-default btn-sm" style="color:darkred; border: none; background: none"><span class="glyphicon glyphicon-remove"></span>
+						</button></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        
+<!--- Add Books To Sell -->
+        <h3 style="padding-left: 20px">New books to sell?</h3>
+        <p style="padding-left: 20px"><i>To post a new book to sell fill out the form below and click submit.</i></p>
+        <br>
+        <form class="form-horizontal" role="form" id="sellForm">
+				<div class="form-group" style="padding-left: 25px">
+				    <label for="inputEmail3" class="col-sm-2 control-label">
+						Title:
+					</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="sellTitle" />
+					</div>
+				</div>
+                <div class="form-group" style="padding-left: 25px">
+				    <label for="inputEmail3" class="col-sm-2 control-label">
+						Edition:
+					</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="sellEdition" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="inputPassword3" class="col-sm-2 control-label">
+						Author:
+					</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="sellAuthor" />
+					</div>
+				</div>
+                <div class="form-group" style="padding-left: 25px">
+					 
+					<label for="inputPassword3" class="col-sm-2 control-label">
+						ISBN:
+					</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="sellISBN" />
+					</div>
+				</div>
+                <div class="form-group" style="padding-left: 25px">
+					 
+					<label for="inputPassword3" class="col-sm-2 control-label">
+						Price:
+					</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="sellPrice" />
+					</div>
+				</div>
+                <div class="form-group" style="padding-left: 25px">
+                    <label for="select quantity" class="col-sm-2 control-label" style="padding-top: 15px">Quantity:</label>
+                    <div class="col-sm-10" style="padding-top: 5px">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group" style="padding-left: 25px">
+					 <label for="inputPassword3" class="col-sm-2 control-label">
+						Image:
+					</label>
+					<div class="col-sm-10" style="padding-top: 5px">
+						<input type="file" name="sellPic" accept="image/*" id="sellImage">
+					</div>
+				</div>
+				<div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+				        <button type="submit" class="btn btn-default" id="addBook">Submit
+						</button>
+					</div>
+				</div>
+                
+            </form>
+    </div>
+         
+</body>
+            <!--<footer>
+                   <p>&copy; <%: DateTime.Now.Year %> - Book Resale Application</p>
+            </footer>-->
+</html>

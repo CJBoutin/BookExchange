@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookExchange</title>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- BookExchange JS -->
+    <script src="BookExchange.js"></script>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "#bbbbbb");
+            });
+            $("input").blur(function()
+            {
+                $(this).css("background-color", "#ffffff");
+            });
+        });
+    </script>
+    
+    <link href="format.css" rel="stylesheet" />
+   
+</head>
+
+    
+<body>
+    
+<!--- Nav Bar --->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid" style="padding-right: 15px; padding-left: 15px">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">BookExchange</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="homepage.html">Home</a></li>
+                <li class="active"><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+            </ul>
+            
+            <form class="navbar-form navbar-left" id="navbarSearch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" id="navbarSearchText">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="editProfile.html"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+                </ul>
+        </div>    
+    </nav> 
+    
+<!--- Book Finder Form --->
+    <div class="col-md-6" style="padding-top: 15px">
+        <h3 style="padding-left: 10px">Book Finder Form</h3>
+        <br>
+        <form class="form-horizontal" role="form" id="buyForm">
+            <div class="form-group" style="padding-left: 25px"> 
+					<label for="buyTitle" class="col-sm-2 control-label" style="padding-top: 15px">
+						Book Title:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="text" class="form-control" id="buyTitle" />
+					</div>
+				</div>
+              <div class="form-group" style="padding-left: 25px">
+					 
+					<label for="buyAuthor" class="col-sm-2 control-label" style="padding-top: 15px">
+						Author:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="text" class="form-control" id="buyAuthor" />
+					</div>
+				</div>
+                    <div class="form-group" style="padding-left: 25px">
+					 
+					<label for="buyISBN" class="col-sm-2 control-label" style="padding-top: 15px">
+						ISBN:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="number" class="form-control" id="buyISBN" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+                    <label for="selectQuantity" class="col-sm-2 control-label" style="padding-top: 15px">Condition:</label>
+                    <div class="col-sm-10" style="padding-top: 5px">
+                            <select class="form-control">
+                                <option id="buyNew">New</option>
+                                <option id="buyUsed">Used</option>
+                                <option id="buyBoth">Both</option>
+                            </select>
+                    </div>
+                </div>
+				
+				<div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						
+                        <button type="submit" class="btn btn-default">Search
+						</button>
+					</div>
+				    </div>
+                   
+			     </form>
+            
+    </div>
+    
+<!--- Filter Results Banner --->
+    <header id="buyResults">
+        <div class="w3-container" style="padding-left: 25px">
+        <h3 style="padding-top: 10px">Results:</h3>
+        
+            <div class="w3-section w3-bottombar w3-padding-16">
+                <span class="w3-margin-right"><b>Filter:</b></span> 
+                <button class="w3-button w3-black" id="filterAll">ALL</button>
+                <button class="w3-button w3-white" id="filterPrice">Price</button>
+                <button class="w3-button w3-white w3-hide-small" id="filterCondition">Condition</button>
+                <button class="w3-button w3-white w3-hide-small" id="filterRating">Rating</button>
+            </div>
+        </div>
+    </header>
+    
+<!-- First Results Row-->
+    <div class="w3-row-padding" style="padding-left: 20px">
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell1">
+            <img src="" alt="First Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book1</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+       <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell2">
+            <img src="" alt="Second Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book2</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell3">
+            <img src="" alt="Third Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book3</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell4">
+            <img src="" alt="Fourth Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book4</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+  </div>
+  
+<!-- Second Results Row -->
+  <div class="w3-row-padding" style="padding-left: 20px">
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell5">
+            <img src="" alt="First Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book5</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell6">
+            <img src="" alt="Second Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book6</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell7">
+            <img src="" alt="Third Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book7</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell8">
+            <img src="" alt="Third Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book8</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+  </div>
+    
+<!-- Third Results Row -->
+  <div class="w3-row-padding" style="padding-left: 20px">
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell9">
+            <img src="" alt="First Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book9</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell10">
+            <img src="" alt="Second Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book10</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell11">
+            <img src="" alt="Third Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book12</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+        <div class="w3-quarter w3-container w3-margin-bottom" id="filterCell12">
+            <img src="" alt="Third Result" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                 <p><b>Random book8</b></p>
+                <p>Price Here</p>
+            </div>
+        </div>
+  </div>
+
+    <!-- Page Selector Bottom Menu -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+
+           
+         
+</body>
+            <!--<footer>
+                   <p>&copy; <%: DateTime.Now.Year %> - Book Resale Application</p>
+            </footer>-->
+</html>

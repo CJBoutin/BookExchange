@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookExchange</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- BookExchange JS -->
+    <script src="BookExchange.js"></script>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "#bbbbbb");
+            });
+            $("input").blur(function()
+            {
+                $(this).css("background-color", "#ffffff");
+            });
+        });
+
+    </script>
+    
+    <link href="format.css" rel="stylesheet" />
+   
+</head>
+
+    
+<body>
+    
+    <!---Nav Bar--->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid" style="padding-right: 15px; padding-left: 15px">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">BookExchange</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="homepage.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+            </ul>
+            
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="editProfile.html"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>  
+        </nav>
+        
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;">
+        <img class="w3-image" src="booksBackground.jpg" alt="BookExchange Banner" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-black w3-opacity-min" style="padding-left: 5px; padding-right: 3px"><b>BE</b></span> <span class="w3-hide-small w3-text-light-grey">BookExchange</span></h1>
+        </div>
+    </header>
+    
+    <div style="padding-left: 25px">    
+    <h1>Welcome to Book Exchange!</h1>
+        
+    <h3 style="padding-left: 20px">-About</h3>
+    <p style="padding-left: 20px; padding-right: 20px">Book exchange is an application in  which users may buy/sell their used or new books. It allows college students to get some of the money back that they invested into their textbooks, and from the other perspective it allows them to save money potentially as well.</p>
+        
+    <h3 style="padding-left: 20px">-Creators</h3>
+        <ul style="list-style-type:disk; padding-left: 40px">
+            <li>Dominic Amalfitano</li>
+            <li>Connor Boutin</li>
+            <li>Christopher John-Ison</li>
+            <li>Nick Poidomani</li>
+            <li>Emmanuel Scur</li>
+            <li>Brad Coles</li>
+        </ul>
+        
+    </div>
+    
+</body>
+            <!--<footer>
+                   <p>&copy; <%: DateTime.Now.Year %> - Book Resale Application</p>
+            </footer>-->
+</html>

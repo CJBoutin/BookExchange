@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookExchange</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- BookExchange JS -->
+    <script src="BookExchange.js"></script>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "#bbbbbb");
+            });
+            $("input").blur(function()
+            {
+                $(this).css("background-color", "#ffffff");
+            });
+        });
+    </script>
+    
+    <link href="format.css" rel="stylesheet" />
+   
+</head>
+
+    
+<body>
+    
+<!--- Nav Bar --->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid" style="padding-right: 15px; padding-left: 15px">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">BookExchange</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+            </ul>
+            
+            <form class="navbar-form navbar-left" id="navbarSearch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" id="navbarSearchText">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+                </ul>
+        </div>    
+    </nav>  
+
+<!--- Welcome Banner --->
+     <h2 style="padding-left: 25px; padding-top: 20px"><b>Hi (get login users name)!</b></h2>
+    <br>
+    
+<!---Current Info--->
+    <div class="row">
+        <div class="col-md-6">
+            <h4 style="padding-left: 25px">Current Profile</h4>
+            <br>
+            <div style="padding-left: 20px">
+                <table class="table table-hover" id="currentProfie">
+                    <tbody>
+                        <tr>
+                            <td><b>Email:</b></td>
+                            <td>qwerty@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><b>Phone Number:</b></td>
+                            <td>4075488123</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+<!--- Update Info --->
+     <h4 style="padding-left: 25px; padding-top: 20px">Make Changes</h4>
+     <br>
+<!---Change Email --->
+           <form class="form-horizontal" role="form" id="changeEmailForm">
+	       <div class="form-group" style="padding-left: 25px">
+				<label for="changEmail1" class="col-sm-2 control-label">
+                    Change Email:
+				</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="changeEmail1" />
+            </div>
+            </div>   
+            <div class="form-group" style="padding-left: 25px">  
+		          <label for="changeEmail2" class="col-sm-2 control-label">
+                        Confirm Email:
+					</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="changeEmail2" />
+					</div>
+            </div>
+            <div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						 
+						<button type="submit" class="btn btn-default">Confirm
+						</button>
+					</div>
+               </div>
+			 </form>
+                
+<!---Change Password---->
+                <form class="form-horizontal" role="form" id="changePasswordForm">
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="changePassword1" class="col-sm-2 control-label">
+						Change Password:
+					</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="changePassword1">
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="changePassword2" class="col-sm-2 control-label">
+						Confirm Password:
+					</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="changePassword2">
+					</div>
+				</div>
+				<div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						 
+						<button type="submit" class="btn btn-default">Confirm
+						</button>
+					</div>
+				    </div>
+			     </form>
+    
+<!--- Change Phone Number ---> 
+                <form class="form-horizontal" role="form" id="changePhoneNumberForm">
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="changePhoneNumber" class="col-sm-2 control-label">
+						Edit Phone Number:
+					</label>
+					<div class="col-sm-10">
+						<input type="tel" class="form-control" id="changePhoneNumber" />
+					</div>
+				</div>
+				<div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						 
+						<button type="submit" class="btn btn-default">Confirm
+						</button>
+					</div>
+				    </div>
+			     </form>  
+    
+</body>
+            <!---<footer>
+                   <p>Book Resale Application</p>
+            </footer>--->
+</html>

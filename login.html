@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookExchange</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- BookExchange JS -->
+    <script src="BookExchange.js"></script>
+    
+    <!-- CryptoJS -->
+    <script src="CryptoJS v3.1.2/rollups/md5.js"></script>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "#bbbbbb");
+            });
+            $("input").blur(function()
+            {
+                $(this).css("background-color", "#ffffff");
+            });
+        });
+        
+                                                                    
+        
+    </script>
+    
+    <link href="format.css" rel="stylesheet" />
+</head>
+
+<body>
+        
+<!--- Nav Bar --->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid" style="padding-right: 15px; padding-left: 15px">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">BookExchange</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+            </ul>
+            
+            <form class="navbar-form navbar-left" id="navbarSearch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" id="navbarSearchText">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            </div>  
+        </nav>
+    
+<!--- Welcome Banner --->
+    <h1 style="padding-left: 20px; padding-top: 20px">Welcome to BookExchange</h1>
+    <p style="padding-left: 20px"><i>Returning user? Login below otherwise register account and begin selling or buying your books today.</i></p>
+    <br>
+    <br> 
+
+<!--- Login --->
+        <div class="row">
+            <div class="col-md-6">
+                
+                <h2 style="padding-left: 25px"><b>Login</b></h2>
+                <br>
+            <form class="form-horizontal" role="form" id="loginForm">
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="inputEmail3" class="col-sm-2 control-label">
+						Username:
+					</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="loginEmail" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label for="inputPassword3" class="col-sm-2 control-label">
+						Password:
+					</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="loginPassword" />
+					</div>
+				</div>
+				<div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							 
+							<label>
+								<input type="checkbox" id="rememberMe"> Remember me
+							</label>
+						</div>
+					</div>
+				</div>
+				<div div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						 
+						<button type="submit" class="btn btn-default">Sign in
+						</button>
+					</div>
+				    </div>
+			     </form>
+            
+                </div>
+            
+<!--- Register -->
+            <div class="col-md-6" >
+                <h2 style="padding-left: 25px"><b>Register</b></h2>
+                <br>
+                <form class="form-horizontal" role="form" id="registerForm">
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label id= "elabel" for="registerEmail" class="col-sm-2 control-label" style="padding-top: 15px">
+						Email:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="email" class="form-control" id="registerEmail" name="registerEmail" />
+					</div>
+				</div>
+                <div class="form-group" style="padding-left: 25px">
+                    
+                    <label id= "phlabel" for="registerPhone" class="col-sm-2 control-label" style="padding-top: 15px">
+                        Phone Number:
+                    </label>
+                    <div class="col-sm-10" style="padding-top: 10px">
+                        <input type="text" class="form-control" id="registerPhone" name="registerPhone" />
+                    </div>
+                </div>
+                    <div class="form-group" style="padding-left: 25px">
+					 
+					<label for="registerUsername" class="col-sm-2 control-label" style="padding-top: 15px">
+						Username:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="text" class="form-control" id="registerUsername" name="registerUsername" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">	 
+					<label id="plabel" for="registerPass" class="col-sm-2 control-label" style="padding-top: 15px">
+						Password:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="password" class="form-control" id="registerPassword" name="registerPass" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+					 
+					<label id="pclabel" for="confPass" class="col-sm-2 control-label" style="text-align: center">
+						Confirm Password:
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<input type="password" class="form-control" id="registerPasswordConfirm" name="confPass" />
+					</div>
+				</div>
+				<div class="form-group" style="padding-left: 25px">
+					<div class="col-sm-offset-2 col-sm-10">
+						
+                        <button type="submit" class="btn btn-default" id="submitButton">Register
+						</button>
+					</div>
+				    </div>
+                   
+			     </form>
+                <div id="caMsg"></div>
+            
+            </div>
+        </div>
+        
+</body>
+</html>
