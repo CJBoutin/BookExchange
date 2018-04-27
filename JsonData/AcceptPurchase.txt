@@ -1,5 +1,7 @@
 // Client sends this to API when a seller accepts a proposed bid
 
+http://boutinvm.eastus.cloudapp.azure.com/Distribute.svc/AcceptPurchase
+
 {
 
     "BidId" : 1
