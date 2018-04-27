@@ -1,0 +1,3 @@
+// The API returns a list of bids when sent a transaction Id
+
+boutinvm.eastus.cloudapp.azure.com/Distribute.svc/GetBids?TranId=1
