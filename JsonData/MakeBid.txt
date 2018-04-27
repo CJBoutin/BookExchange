@@ -1,5 +1,6 @@
 // The client sends this to the API when current user wants to buy an item.
 
+http://Boutinvm.eastus.cloudapp.azure.com/Distribute.svc/MakeBid
 {
 
     "PurchaserId" : 1,
