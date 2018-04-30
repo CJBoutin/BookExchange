@@ -1,0 +1,3 @@
+// This method gets all transactions associated with a user. It's a simple get.
+
+http://boutinvm.eastus.cloudapp.azure.com/Distribute.svc/GetUserTransactions?UserId=1
